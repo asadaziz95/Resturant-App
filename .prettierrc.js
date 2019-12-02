@@ -3,4 +3,7 @@ module.exports = {
   jsxBracketSameLine: true,
   singleQuote: true,
   trailingComma: 'all',
+  "folders": [],
+  "settings": {},
+  "editor.formatOnSave": true,
 };
