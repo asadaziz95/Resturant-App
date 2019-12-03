@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
-import SearchBar from './../../components/SearchBar.js';
-import useResults from '../../hooks/useResults.js';
-import ResultsList from '../../components/ResultsList.js';
+import {Text, StyleSheet, ScrollView} from 'react-native';
+import SearchBar from './../components/SearchBar.js';
+import useResults from './../hooks/useResults.js';
+import ResultsList from './../components/ResultsList.js';
 
-const SearchScreen = () => {
+const SearchScreen = ({navigation}) => {
   const [term, setTerm] = useState('');
   const [searchApi, results, errorMessage] = useResults();
   const filterResultByPrice = price => {
@@ -24,16 +24,22 @@ const SearchScreen = () => {
       {/* <Text>We have found {results.length}</Text> */}
       <ScrollView>
         <ResultsList
+        navigation={navigation}
           results={filterResultByPrice('$')}
           title={'Cost Effective'}
+          
         />
         <ResultsList
+            navigation={navigation}
           results={filterResultByPrice('$$')}
           title={'Bit Pricier'}
+      
         />
         <ResultsList
+        navigation={navigation}
           results={filterResultByPrice('$$$')}
           title={'Big Spender'}
+          
         />
       </ScrollView>
     </>
