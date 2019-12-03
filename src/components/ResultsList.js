@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
-import ResultsDetail from './ResultsDetail.js'
+import ResultsDetail from './ResultsDetail.js';
 
 const ResultsList = ({title, results}) => {
   return (
